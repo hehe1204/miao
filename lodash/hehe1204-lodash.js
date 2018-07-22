@@ -15,8 +15,9 @@ var hehe1204 = {
      			result.push(ary[i])
      		}
      	return result
-     }
-     ,
+        }
+    }
+    ,
     drop:function(ary,n = 1){
         var result = []
         for(var i = n;i < ary.length;i++){
@@ -26,7 +27,7 @@ var hehe1204 = {
         return result
     }
     ,
-    dropRight(ary,n = 1){
+    dropRight:function(ary,n = 1){
         var result = []
         for(var i = ary.length - (n + 1);i >= 0;i--){
         result.unshift(ary[i])
