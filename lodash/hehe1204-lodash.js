@@ -14,8 +14,9 @@ var hehe1204 = {
      		if(ary[i]){
      			result.push(ary[i])
      		}
-     	return result
+     	
         }
+        return result
     }
     ,
     drop:function(ary,n = 1){
