@@ -52,4 +52,7 @@ var hehe1204 = {
             ary[x] = result1[i]
         }
     return ary
-    }    
+    }
+    ,
+
+}   
