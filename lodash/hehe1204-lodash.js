@@ -74,6 +74,22 @@ var hehe1204 = {
         result1 = result1 + ary[ary.length - 1]
         return result1
     },
+    last:function(ary){
+    	if(ary.length){
+    		return ary[ary.length - 1]
+    	}
+    },
+    pull:function(ary,...val){
+        for(var i = 0;i < ary.length;i++){
+           for(var x = 0;x < val.length;x++){
+               if(ary[i] === val[x]){
+               ary.splice(i,1)
+               }
+           }
+        }
+        return ary
+    },
+
 
 
 
