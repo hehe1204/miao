@@ -54,5 +54,27 @@ var hehe1204 = {
     return ary
     }
     ,
+    flatten:function(ary){
+        var result = []
+        result.concat(...ary)
+        return result.concat(...ary)
+    },
+
+    head:function(ary){
+    	 if(ary.length){
+    	 	return ary[0]
+    	 }
+    },
+
+    join:function(ary,n){
+        var result1 = ""
+        for(var i = 0;i < ary.length - 1;i++){
+            result1 = result1 + ary[i] + n
+           }
+        result1 = result1 + ary[ary.length - 1]
+        return result1
+    },
+
+
 
 }   
