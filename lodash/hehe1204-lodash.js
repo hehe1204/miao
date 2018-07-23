@@ -38,6 +38,18 @@ var hehe1204 = {
     }
     ,
 
-
-    
-}    
+    fill:function(ary,n,...value){
+        var result = []
+        var result1 = []
+        var x 
+        result.push(...value)
+        for(var i = 0;i < result.length;i++){
+       
+            ary[result[i]] = result[i]
+            x = result[i]
+            result1.push(result[i])
+            result1.fill(n)
+            ary[x] = result1[i]
+        }
+    return ary
+    }    
