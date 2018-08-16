@@ -8,7 +8,7 @@ var hehe1204 = {
 			return result
 		}
      ,
-     compoct:function(ary){
+     compact:function(ary){
      	var result = []
      	for(var i = 0;i < ary.length;i++){
      		if(ary[i]){
@@ -37,23 +37,19 @@ var hehe1204 = {
         return result
     }
     ,
-
-    fill:function(ary,n,...value){
-        var result = []
-        var result1 = []
-        var x 
-        result.push(...value)
-        for(var i = 0;i < result.length;i++){
-       
-            ary[result[i]] = result[i]
-            x = result[i]
-            result1.push(result[i])
-            result1.fill(n)
-            ary[x] = result1[i]
+    fill:function(...arg){
+        var ary = arg[0]
+        if(arg.length === 2){
+            ary.fill(arg[1])
         }
-    return ary
-    }
-    ,
+        if(arg.length >= 3){
+            for(var i = 2;i < arg.length;i++){
+                ary.fill(arg[1],arg[i],arg[i] + 1)
+            }
+       }
+       return ary
+    },
+
     flatten:function(ary){
         var result = []
         result.concat(...ary)
@@ -79,18 +75,31 @@ var hehe1204 = {
     		return ary[ary.length - 1]
     	}
     },
-    pull:function(ary,...val){
+
+    pull:function(...arg){
+        var ary = arg[0]
         for(var i = 0;i < ary.length;i++){
-           for(var x = 0;x < val.length;x++){
-               if(ary[i] === val[x]){
-               ary.splice(i,1)
-               }
-           }
+            for(var a = 1;a < arg.length;a++){
+                if(ary[i] === arg[a]){
+                    ary.splice(i,1)
+                    i = (-1)
+                }
+            }
+        }
+        return ary
+    }，
+
+    difference:function(ary,...value){
+        var result = [].concat(...value)
+        for(var i = 0;i < ary.length;i++){
+            for(var a = 0;a < result.length;a++){
+                if(ary[i] === result[a]){
+                    ary.splice(i,1)
+                    i = (-1)
+                }
+            }
         }
         return ary
     },
-
-
-
-
+    
 }   
