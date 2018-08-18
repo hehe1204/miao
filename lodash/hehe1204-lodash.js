@@ -1,37 +1,36 @@
 var hehe1204 = {
 	chunk:function(array,size = 1){
-			var result =[]
-			for(var i = 0;i < array.length;i += size){
-				result.push(array.slice(i,size + i))
+	    var result =[]
+		for(var i = 0;i < array.length;i += size){
+			result.push(array.slice(i,size + i))
 
-			}
-			return result
 		}
-     ,
-     compact:function(ary){
-     	var result = []
-     	for(var i = 0;i < ary.length;i++){
-     		if(ary[i]){
-     			result.push(ary[i])
-     		}
-     	
-        }
-        return result
+		return result
+	}
+    ,
+    compact:function(ary){
+        var result = []
+        ary.forEach(item => {
+            if(item){
+                result.push(item)
+            }
+        })
+    return result
     }
     ,
     drop:function(ary,n = 1){
         var result = []
         for(var i = n;i < ary.length;i++){
-            result.push(ary[i])
+                result.push(ary[i])
         }
 
         return result
     }
-    ,
+    ，
     dropRight:function(ary,n = 1){
         var result = []
         for(var i = ary.length - (n + 1);i >= 0;i--){
-        result.unshift(ary[i])
+                result.unshift(ary[i])
         }
 
         return result
@@ -46,7 +45,7 @@ var hehe1204 = {
             for(var i = 2;i < arg.length;i++){
                 ary.fill(arg[1],arg[i],arg[i] + 1)
             }
-       }
+        }
        return ary
     },
 
@@ -69,13 +68,15 @@ var hehe1204 = {
            }
         result1 = result1 + ary[ary.length - 1]
         return result1
-    },
+    }
+    ,
     last:function(ary){
     	if(ary.length){
     		return ary[ary.length - 1]
     	}
-    },
+    }
 
+    ,
     pull:function(...arg){
         var ary = arg[0]
         for(var i = 0;i < ary.length;i++){
@@ -87,7 +88,8 @@ var hehe1204 = {
             }
         }
         return ary
-    }，
+    }
+    ,
 
     difference:function(ary,...value){
         var result = [].concat(...value)
@@ -100,6 +102,7 @@ var hehe1204 = {
             }
         }
         return ary
-    },
+    }   
+    ,
     
 }   
