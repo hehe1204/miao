@@ -26,7 +26,7 @@ var hehe1204 = {
 
         return result
     }
-    ，
+    ,
     dropRight:function(ary,n = 1){
         var result = []
         for(var i = ary.length - (n + 1);i >= 0;i--){
