@@ -18,15 +18,6 @@ var hehe1204 = {
     return result
     }
     ,
-    drop:function(ary,n = 1){
-        var result = []
-        for(var i = n;i < ary.length;i++){
-                result.push(ary[i])
-        }
-
-        return result
-    }
-    ,
     dropRight:function(ary,n = 1){
         var result = []
         for(var i = ary.length - (n + 1);i >= 0;i--){
@@ -47,19 +38,22 @@ var hehe1204 = {
             }
         }
        return ary
-    },
+    }
+    ,
 
     flatten:function(ary){
         var result = []
         result.concat(...ary)
         return result.concat(...ary)
-    },
+    }
+    ,
 
     head:function(ary){
     	 if(ary.length){
     	 	return ary[0]
     	 }
-    },
+    }
+    ,
 
     join:function(ary,n){
         var result1 = ""
@@ -103,6 +97,55 @@ var hehe1204 = {
         }
         return ary
     }   
+    ,
+
+    union:function(...arr){
+        var res = []
+        var unionArray = function(array){
+            array.forEach(item => {
+                if(res.includes(item)){
+                   res
+                }else{
+                    res.push(item)
+                }
+            })
+        
+        }
+        for(var i = 0;i < arr.length;i++){
+            unionArray(arr[i])
+        }
+        return res
+
+    }
+    ,
+    takeRight:function(arr,target = 1){
+        var res = []
+        if(arr.length < target){
+            res = arr
+            return res
+        }
+        for(var i = arr.length - 1;i >= arr.length - target;i--){
+            res.unshift(arr[i])
+        }
+        return res
+    }
+    ,
+    reverse:function(arr){
+        var res = []
+        arr.forEach(item => {
+           res.unshift(item)
+        })
+        return res
+    }
+    ,
+    drop:function(ary,n = 1){
+        var result = []
+        for(var i = n;i < ary.length;i++){
+                result.push(ary[i])
+        }
+
+        return result
+    }
     ,
     
 }   
