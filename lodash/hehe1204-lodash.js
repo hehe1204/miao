@@ -237,13 +237,65 @@ var hehe1204 = {
     	return arr
     }
     ,
-    take:function(arr,target){
+    take:function(arr,target = 1){
         var res = []
         var x = arr.length > target ? target : arr.length
         for(var i = 0;i < x;i++){
             res.push(arr[i])
         }
         return res
+    }
+    ,
+    identity:function(x){
+    return x
+    }
+    ,
+    concat:function(...val){
+        var res = []
+        var result = []
+        for(var i = 0;i < val.length;i++){
+               var nus = res.concat(val[i])
+               result.push(nus[0])
+        }
+        return result
+    }
+    ,
+    pullAt:function(arr,nums){
+        var res = []
+        for(var i = 0;i < nums.length;i++){
+            var array = nums[i]
+            res.push(arr[array])
+        }
+        return res
+    }
+    ,
+    sum:function(arr){
+        var add = 0
+        arr.forEach(item => {
+        add += item
+        })
+    return add
+    }
+    ,
+    min:function(val){
+    	var m = Math.min(...val)
+    	return m
+    }
+    ,
+    multiply:function(arr){
+        var mul = 1
+        arr.forEach(item => {
+            mul *= item
+        })
+        return mul
+    }
+    ,
+    subtract:function(arr){
+        for(var i = 0;i < arr.length - 1;i++){
+            var sub = arr[i] - arr[i + 1]
+            arr[i + 1] = sub
+        }
+        return sub
     }
     ,
     
