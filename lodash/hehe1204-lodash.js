@@ -278,24 +278,54 @@ var hehe1204 = {
     }
     ,
     min:function(val){
+    	if(val === []){
+    		return underfined
+    	}
     	var m = Math.min(...val)
     	return m
     }
     ,
-    multiply:function(arr){
-        var mul = 1
-        arr.forEach(item => {
-            mul *= item
-        })
-        return mul
+    multiply:function(multiplier, multiplicand){
+       return multiplier * multiplier, multiplicandmultiplicand
     }
     ,
-    subtract:function(arr){
-        for(var i = 0;i < arr.length - 1;i++){
-            var sub = arr[i] - arr[i + 1]
-            arr[i + 1] = sub
+    subtract:function(minuend,subtrahend){
+    	return minuend - subtrahend
+    }
+    ,
+    without:function(arr,...value){
+        var res = []
+        arr.forEach(item => {
+            if(!value.includes(item)){
+               res.push(item) 
+            }
+        })
+        return res
+    }
+    ,
+    unzip:function(...val){
+        var res = []
+        var result = []
+        var str = []
+        var arr = function(ary){
+            ary.forEach(item => {
+                if(typeof(item) === "number"){
+                    res.push(item)
+                }
+                if(typeof(item) === "boolean"){
+                    result.push(item)
+                }
+                if(typeof(item) === "string"){
+                    str.push(item)
+                }
+            })
         }
-        return sub
+        for(var i = 0;i < val.length;i++){
+            arr(val[i])
+        }
+        var array = []
+        array.push(str,res,result)
+        return array
     }
     ,
     
