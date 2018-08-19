@@ -147,5 +147,104 @@ var hehe1204 = {
         return result
     }
     ,
+    initial:function(ary){
+    	ary.pop()
+    	return ary
+    }
+    ,
+    intersection:function(ary,arr){
+        var res = []
+        ary.forEach(item => {
+            if(arr.includes(item)){
+            res.push(item)
+            }
+        })
+        return res
+    }
+    ,
+    fromPairs:function(arr){
+        var obj = new Object()
+        var fromPairsArray = function(item){
+            var name = item[0]
+            var value = item[1]
+            obj[name] = value
+        }
+        for(var a = 0;a < arr.length;a++){
+            fromPairsArray(arr[a])
+        }
+        return obj
+     }
+     ,
+    flattenDeep:function(arr){
+        var res = []
+        var flattenDeepNumber = function(temp){
+            temp.forEach(item => {
+                if(!Array.isArray(item)){
+                    res.push(item)
+                }else{
+                    flattenDeepNumber(item)
+                }
+            })
+        }
+        for(var i = 0;i < arr.length;i++){
+            if(Array.isArray(arr[i])){
+                flattenDeepNumber(arr[i])
+            }else{
+                res.push(arr[i])
+            }
+        }
+        return res
+    }
+    ,
+    xxxxflattenDepth:function(arr,target){
+        var res = []
+        var flattenDeepNumber = function(temp){
+            temp.forEach(item => {
+                if(!Array.isArray(item)){
+                    res.push(item)
+                }else{
+                    flattenDeepNumber(item)
+                }
+            })
+        }
+        do{
+            for(var i = 0;i < arr.length;i++){
+                if(Array.isArray(arr[i])){
+                	if(target > 0){
+                        flattenDeepNumber(arr[i])
+                        target--
+                	}
+                }else{
+                    res.push(arr[i])
+                }
+            }
+        }while(target == 0)
+        return res
+    }
+    ,
+    uniq:function(arr){
+        var res = []
+        arr.forEach(item => {
+            if(!res.includes(item)){
+            res.push(item)
+            }
+        })
+        return res
+    }
+    ,
+    tail:function(arr){
+    	arr.shift()
+    	return arr
+    }
+    ,
+    take:function(arr,target){
+        var res = []
+        var x = arr.length > target ? target : arr.length
+        for(var i = 0;i < x;i++){
+            res.push(arr[i])
+        }
+        return res
+    }
+    ,
     
 }   
