@@ -27,17 +27,11 @@ var hehe1204 = {
         return result
     }
     ,
-    fill:function(...arg){
-        var ary = arg[0]
-        if(arg.length === 2){
-            ary.fill(arg[1])
+    fill:function(arr,value,start = 0,end = arr.length){
+        for(var i = start;i < end;i++){
+        	arr.fill(value,i,i + 1)
         }
-        if(arg.length >= 3){
-            for(var i = 2;i < arg.length;i++){
-                ary.fill(arg[1],arg[i],arg[i] + 1)
-            }
-        }
-       return ary
+        return arr
     }
     ,
 
